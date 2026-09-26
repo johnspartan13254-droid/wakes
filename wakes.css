@@ -149,6 +149,19 @@ body {
   pointer-events: none;
 }
 
+/* Compact applet layout */
+.slides {
+  min-height: 0;
+}
+
+.slide {
+  min-height: 0;
+}
+
+.slider {
+  padding: 1.25rem 1.5rem 3rem;
+}
+
 .slider:hover::before {
   opacity: 1;
 }
