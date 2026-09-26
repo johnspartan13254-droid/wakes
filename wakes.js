@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const indicator = root.querySelector(".indicator");
     let current = 0;
     let timer = null;
+    let selected = false;
 
     function setActive(index) {
       current = (index + slides.length) % slides.length;
@@ -46,10 +47,17 @@ document.addEventListener("DOMContentLoaded", () => {
     // Dot navigation
     dots.forEach((dot, i) => {
       dot.addEventListener("click", () => {
+        selected = true;
         setActive(i);
-        start();
-      });
+        stop();
 
+    root.classList.add("is-selected");
+    });
+      
+    dot.addEventListener("click", () => {
+      setActive(i);
+        start();
+    });
       dot.addEventListener("keydown", (e) => {
         if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
