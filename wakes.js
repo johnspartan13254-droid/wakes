@@ -33,6 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function start() {
+      if (selected) return;
+
       stop();
       timer = setInterval(next, autoplayMs);
     }
