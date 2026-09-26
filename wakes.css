@@ -39,6 +39,7 @@ body {
 
 /* Individual slide */
 .slide {
+  display: none;
   opacity: 0;
   transform: translateY(10px) scale(0.98);
   pointer-events: none;
@@ -49,6 +50,13 @@ body {
   filter: blur(2px);
 }
 
+.slide.is-active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+  filter: blur(0);
+}
 .slide.is-active {
   opacity: 1;
   transform: translateY(0) scale(1);
