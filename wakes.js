@@ -45,19 +45,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Dot navigation
-    dots.forEach((dot, i) => {
-      dot.addEventListener("click", () => {
-        selected = true;
-        setActive(i);
-        stop();
+  dots.forEach((dot, i) => {
+  dot.addEventListener("click", () => {
+    selected = true;
+    setActive(i);
+    stop();
 
     root.classList.add("is-selected");
-    });
-      
-    dot.addEventListener("click", () => {
-      setActive(i);
-        start();
-    });
+  });
+    
       dot.addEventListener("keydown", (e) => {
         if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
