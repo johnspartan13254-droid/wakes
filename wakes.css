@@ -165,3 +165,86 @@ body {
 .slider:hover::before {
   opacity: 1;
 }
+
+/* =========================================
+   WAKES — 3 SLIDERS + SPIRIT ANIMAL LAYOUT
+========================================= */
+
+.wakes-layout {
+  width: min(1200px, calc(100% - 2rem));
+  margin: 2.5rem auto;
+
+  display: grid;
+  grid-template-columns: minmax(0, 720px) minmax(280px, 1fr);
+  gap: 2rem;
+
+  align-items: stretch;
+}
+
+
+/* LEFT COLUMN */
+
+.slider-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.slider-stack .slider {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+/* RIGHT COLUMN — SPIRIT ANIMAL */
+
+.result {
+  box-sizing: border-box;
+  padding: 1.5rem;
+
+  background: linear-gradient(145deg, #0b0f1a, #151a2b);
+  border-radius: var(--wake-radius);
+  box-shadow: var(--wake-shadow);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  overflow: hidden;
+}
+
+.result-eyebrow {
+  margin: 0 0 0.75rem;
+
+  color: var(--wake-accent);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.result h2 {
+  margin: 0 0 0.75rem;
+  color: var(--wake-cyan);
+}
+
+.result p {
+  color: var(--wake-muted);
+}
+
+
+/* MOBILE — STACK EVERYTHING */
+
+@media (max-width: 850px) {
+
+  .wakes-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .result {
+    min-height: 400px;
+  }
+}
